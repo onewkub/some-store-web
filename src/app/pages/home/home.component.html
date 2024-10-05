@@ -45,16 +45,15 @@
   <div
     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
   >
-    <div
-      *ngFor="let _ of [1, 2, 3, 4]"
-      class="p-4 border rounded-lg shadow-lg animate-pulse"
-    >
+    @for(_ of [1, 2, 3, 4];track $index){
+    <div class="p-4 border rounded-lg shadow-lg animate-pulse">
       <div class="h-48 bg-gray-300 rounded-md"></div>
       <div class="mt-4 space-y-2">
         <div class="h-4 bg-gray-300 rounded w-3/4"></div>
         <div class="h-4 bg-gray-300 rounded w-1/2"></div>
       </div>
     </div>
+    }
   </div>
   } @else{ @if (products.length <= 0) {
   <div class="text-center text-gray-600 w-100">No products found</div>
