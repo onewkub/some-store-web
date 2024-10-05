@@ -1,0 +1,51 @@
+<div class="bg-white shadow-lg rounded-lg overflow-hidden p-4">
+  <div class="relative">
+    <div class="flex overflow-x-auto space-x-2 scrollbar-hide" #imageSlider>
+      <img
+        class="w-full h-48 object-contain rounded-lg"
+        [src]="product.images[currentImageIndex]"
+        alt="Product Image"
+      />
+    </div>
+
+    <button
+      class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-200 text-gray-800 p-2 rounded-full focus:outline-none"
+      (click)="prevImage()"
+    >
+      <span class="material-icons">chevron_left</span>
+    </button>
+    <button
+      class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-200 text-gray-800 p-2 rounded-full focus:outline-none"
+      (click)="nextImage()"
+    >
+      <span class="material-icons">chevron_right</span>
+    </button>
+  </div>
+
+  <div class="flex flex-col space-y-2 mt-4">
+    <h2 class="text-xl font-bold text-gray-800 truncate">{{ product.name }}</h2>
+
+    <p class="text-gray-600">
+      Brand: <span class="font-semibold">{{ product.brand }}</span>
+    </p>
+
+    <p class="text-lg font-bold text-primary">
+      {{ product.price.toLocaleString(product.currency) }}
+      {{ product.currency }}
+    </p>
+
+    <div class="flex items-center justify-between mt-4">
+      <p class="text-gray-600">
+        Sold: <span class="font-semibold">{{ product.soldCount }}</span>
+      </p>
+
+      <div class="flex items-center">
+        <span class="material-icons text-yellow-500">star</span>
+        <span class="text-gray-600 ml-1">{{ product.reviewScore }}</span>
+        <span class="text-gray-500 ml-2"
+          >({{ product.reviewCount }} reviews)</span
+        >
+      </div>
+    </div>
+  </div>
+</div>

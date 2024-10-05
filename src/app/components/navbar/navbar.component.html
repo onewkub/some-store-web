@@ -1,0 +1,53 @@
+<nav class="bg-background p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <div class="text-primary text-xl font-bold">Wooden Tables</div>
+
+    <div class="lg:hidden">
+      <button class="text-primary focus:outline-none" (click)="toggleDrawer()">
+        <span class="material-icons">menu</span>
+      </button>
+    </div>
+
+    <div class="hidden lg:flex space-x-4 items-center">
+      <a href="#" class="text-textPrimary hover:text-primary">Home</a>
+      <a href="#" class="text-textPrimary hover:text-primary">Shop</a>
+      <a href="#" class="text-textPrimary hover:text-primary">Contact</a>
+    </div>
+
+    <div class="hidden lg:flex space-x-6 items-center">
+      <a href="#" class="text-textPrimary hover:text-primary">
+        <span class="material-icons">shopping_cart</span>
+      </a>
+      <a href="#" class="text-textPrimary hover:text-primary">
+        <span class="material-icons">person</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+@if (drawerOpen) {
+<div
+  class="fixed inset-y-0 right-0 w-64 bg-primary transform transition-transform lg:hidden z-50"
+>
+  <div class="p-4">
+    <button class="text-background" (click)="toggleDrawer()">
+      <span class="material-icons">close</span>
+    </button>
+
+    <nav class="mt-4 space-y-4">
+      <a href="#" class="block text-background hover:text-accent">Home</a>
+      <a href="#" class="block text-background hover:text-accent">Shop</a>
+      <a href="#" class="block text-background hover:text-accent">Contact</a>
+
+      <div class="space-y-2 mt-4">
+        <a href="#" class="block text-background hover:text-accent">
+          <span class="material-icons">shopping_cart</span> Cart
+        </a>
+        <a href="#" class="block text-background hover:text-accent">
+          <span class="material-icons">person</span> Profile
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>
+}
