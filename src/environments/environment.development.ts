@@ -1,5 +1,5 @@
 export const environment = {
-  production: true,
-  apiUrl: 'https://some-store-api.onew.dev',
+  production: false,
+  apiUrl: 'http://localhost:5161',
   baseImageUrl: 'https://tabledusud.nl',
 };
