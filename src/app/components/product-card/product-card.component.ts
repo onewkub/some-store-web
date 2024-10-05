@@ -24,7 +24,7 @@ export class ProductCardComponent {
 
   currentImageIndex = 0;
 
-  isLoading = false;
+  isLoading = true;
 
   onLoad() {
     this.isLoading = false;
